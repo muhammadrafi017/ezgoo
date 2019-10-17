@@ -1,4 +1,7 @@
 <?php
+Route::get('test', function() {
+  return auth()->user()->groups()->get();
+});
 // AJAX
 Route::get('plane/ajax/{id}','AdminController@planeAjax');
 Route::get('airport/ajax/{id}','AdminController@airportAjax');
@@ -54,7 +57,7 @@ Route::group(['prefix'=>'admin', 'middleware' => 'group:admin'], function(){
   });
 });
 //user
-Route::group(['prefix' => 'user', 'middleware'=> ['isVerified', 'group:user']], function(){
+Route::group(['prefix' => 'user', 'middleware'=> ['isVerified', 'group:member']], function(){
   Route::get('edit/{id}/{type}', 'UserController@edit')->name('edit');
   Route::put('update', 'UserController@update')->name('update');
   Route::put('updatePass', 'UserController@updatePassword')->name('updatePass');
