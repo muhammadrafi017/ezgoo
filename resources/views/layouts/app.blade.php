@@ -79,7 +79,7 @@
     <div class="row">
       <div class="col-md-3 footer-brand animated fadeInLeft">
         <h2>{{config('app.name')}}</h2>
-        <p>{{config('app.name')}} Booking Ticket pesawat dan kereta mudah dan aman</p>
+        <p>{{config('app.name')}} Booking Tiket pesawat dan kereta mudah dan aman</p>
         <p>© 2018 {{config('app.name')}}, All rights reserved</p>
       </div>
       <div class="col-md-4 footer-nav animated fadeInUp">

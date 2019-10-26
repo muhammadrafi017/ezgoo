@@ -51,7 +51,7 @@
             <li><a href="{{ URL('admin/users') }}"><em class="fa fa-users"></em> Users</a></li>
             <li><a href="{{ URL('admin/booking') }}"><em class="fa fa-list"></em> Booking Data </a></li>
 
-            <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+            {{-- <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
                 <em class="fa fa-plane">&nbsp;</em> Pesawat <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
                 </a>
                 <ul class="children collapse" id="sub-item-1">
@@ -65,7 +65,7 @@
                         <a class="" href="{{ url('admin/plane/schedule/index') }}"><span class="fa fa-arrow-right"></span> Jadwal Penerbangan </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             <li class="parent "><a data-toggle="collapse" href="#sub-item-2">
                 <em class="fa fa-train">&nbsp;</em> Kereta Api <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
                 </a>

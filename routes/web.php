@@ -1,7 +1,7 @@
 <?php
 // AJAX
-Route::get('plane/ajax/{id}','AdminController@planeAjax');
-Route::get('airport/ajax/{id}','AdminController@airportAjax');
+// Route::get('plane/ajax/{id}','AdminController@planeAjax');
+// Route::get('airport/ajax/{id}','AdminController@airportAjax');
 Route::get('train/ajax/{id}','AdminController@trainAjax');
 Route::get('station/ajax/{id}','AdminController@stationAjax');
 //auth
@@ -24,20 +24,20 @@ Route::group(['prefix'=>'admin', 'middleware' => 'group:admin'], function(){
 
   //booking
   Route::resource('booking','BookingController');
-  //plane
-  Route::resource('plane', 'PlaneController');
-  //airport
-  Route::resource('airport', 'AirportController');
-  //plane schedule
-  Route::group(['prefix'=>'plane/schedule'], function(){
-    Route::get('index', 'PlaneController@schedule');
-    Route::get('detail/{id}','PlaneController@detailSchedule');
-    Route::get('create','PlaneController@createSchedule');
-    Route::post('store','PlaneController@storeSchedule');
-    Route::get('edit/{id}','PlaneController@editSchedule');
-    Route::put('update/{id}','PlaneController@updateSchedule');
-    Route::delete('destroy/{id}','PlaneController@destroySchedule');
-  });
+  // //plane
+  // Route::resource('plane', 'PlaneController');
+  // //airport
+  // Route::resource('airport', 'AirportController');
+  // //plane schedule
+  // Route::group(['prefix'=>'plane/schedule'], function(){
+  //   Route::get('index', 'PlaneController@schedule');
+  //   Route::get('detail/{id}','PlaneController@detailSchedule');
+  //   Route::get('create','PlaneController@createSchedule');
+  //   Route::post('store','PlaneController@storeSchedule');
+  //   Route::get('edit/{id}','PlaneController@editSchedule');
+  //   Route::put('update/{id}','PlaneController@updateSchedule');
+  //   Route::delete('destroy/{id}','PlaneController@destroySchedule');
+  // });
   //train
   Route::resource('train', 'TrainController');
   //airport

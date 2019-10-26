@@ -43,22 +43,23 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="images/banner2.jpg" alt="...">
+      <img src="images/banner-kereta.jpg" style="width:100%;height:50vh;" alt="...">
       <div class="carousel-caption">
        <h1>EZGOO Memberikan Kemudahan dalam memilih Tiket Perjalanan anda</h1>
       </div>
     </div>
     <div class="item">
-      <img src="images/banner3.jpg" alt="...">
+      <img src="images/banner3.jpg" style="width:100%;height:50vh;" alt="...">
       <div class="carousel-caption">
        <h1>EZGOO Memberikan Harga yang relatif murah dan tersedia berbagai macam pilihan tiket</h1>
       </div>
     </div>
 
     <div class="item">
-      <img src="images/pesawat.jpg" alt="...">
+      <img src="images/banner-kereta-2.jpg" style="width:100%;height:50vh;" alt="...">
       <div class="carousel-caption">
-        <h1>EZGOO Memberikan pilihan Maskapai dan Kereta Terbaik untuk Perjalanan Anda</h1>
+        <h1>EZGOO Memberikan pilihan Kereta Terbaik untuk Perjalanan Anda</h1>
+        {{-- <h1>EZGOO Memberikan pilihan Maskapai dan Kereta Terbaik untuk Perjalanan Anda</h1> --}}
       </div>
     </div>
   </div>
@@ -80,8 +81,8 @@
       <div role="tabpanel">
           <div class="panel-body">
             <ul class="nav nav-tabs">
-              <li class="active"> <a href="#pesawat" data-toggle="tab">Pesawat</a></li>
-              <li> <a href="#kereta" data-toggle="tab">Kereta</a></li>
+              {{-- <li class="active"> <a href="#pesawat" data-toggle="tab">Pesawat</a></li> --}}
+              <li class="active"> <a href="#kereta" data-toggle="tab">Kereta</a></li>
             </ul>
             @if (Session::has('error'))
               <div class="alert alert-danger">
@@ -89,7 +90,7 @@
               </div>
             @endif
             <div class="tab-content">
-              <div class="tab-pane active" id="pesawat">
+              {{-- <div class="tab-pane active" id="pesawat">
                 <form action="{{ url('booking/search') }}" method="post">
                   {{ csrf_field() }}
                   <input type="hidden" name="vehicle" value="plane">
@@ -176,8 +177,8 @@
                     <button type="submit" class="btn btn-primary">Cari Tiket Pesawat</button>
                   </div>
                 </form>
-              </div>
-              <div class="tab-pane" id="kereta">
+              </div> --}}
+              <div class="tab-pane active" id="kereta">
                 <form action="{{ url('booking/search') }}" method="post">
                   {{ csrf_field() }}
                   <input type="hidden" name="vehicle" value="train">
