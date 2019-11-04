@@ -70,6 +70,7 @@
               </ul>
             </li>
           @endguest
+          <li><a href="{{ url('booking/payment') }}">Pembayaran Booking</a></li>
         </ul>
       </div>
     </nav>

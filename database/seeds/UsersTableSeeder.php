@@ -29,6 +29,7 @@ class UsersTableSeeder extends Seeder
         $member->name         = 'Member EzGoo';
         $member->first_name = 'Member';
         $member->last_name  = 'EzGoo';
+        $member->nik  = '12345';
         $member->title  = 'Tuan';
         $member->phone  = '082220279970';
         $member->email  = 'member@ezgoo.com';
@@ -44,6 +45,7 @@ class UsersTableSeeder extends Seeder
         $admin->name         = 'Admin EzGoo';
         $admin->first_name = 'Admin';
         $admin->last_name  = 'EzGoo';
+        $admin->nik  = '12345';
         $admin->title  = 'Tuan';
         $admin->phone  = '082220279970';
         $admin->email  = 'admin@ezgoo.com';

@@ -82,22 +82,6 @@ class UserController extends Controller
 
     public function showTicket($id, $id_booking)
     {
-      // if ($id == Auth::user()->id) {
-      //   $data = Booking::where('id', $param)->with(['detail_booking', 'transaction'])->get();
-      //   $pas = Passenger::where('detail_booking_id', $data[0]->detail_booking->id)->get();
-      //   if ($data[0]->vehicle == "plane") {
-      //     $sche = PlaneSchedule::where('id',$data[0]->schedule_id)->with(['airport','plane'])->get();
-      //   }elseif ($data[0]->vehicle == "train") {
-      //     $sche = TrainSchedule::where('id',$data[0]->schedule_id)->with(['station','train'])->get();
-      //   }
-      //   if ($data[0]->transaction->status != 1) {
-      //     return redirect('payment/'.$data[0]->id);
-      //   }else {
-      //     return view('booking.myTicket', compact('data','pas', 'sche'));
-      //   }
-      // }else {
-      //   return back();
-      // }
       $vehicleP = '';
       $vehicleT = '';
       $unique = Auth::user()->id;

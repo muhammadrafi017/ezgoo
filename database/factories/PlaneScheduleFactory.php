@@ -19,7 +19,7 @@ DB::table('plane_schedules')->delete();
     $lastAirport = Airport::find($num2);
     $w = rand(1,7);
     $d = rand(1,28);
-    $date = Carbon::create(2018,5,1)->addWeeks($w)->addDays($d);
+    $date = Carbon::today()->addWeeks($w)->addDays($d);
 
     if ($lastAirport == $firstAirport) {
       goto a;

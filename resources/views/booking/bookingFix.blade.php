@@ -62,6 +62,41 @@
             </div>
           </div>
           <div class="panel panel-info">
+            <div class="panel-heading">Data pemesan</div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputemail1">Titel</label>
+                        <select class="form-control" name="booking[title]">
+                          <option disabled selected>Pilih</option>
+                          <option>Tuan</option>
+                          <option>Nyonya</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputemail1">Nama Lengkap</label>
+                        <input type="text" class="form-control" name="booking[name]" placeholder="Isi disini">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputemail1">No KTP</label>
+                        <input type="text" class="form-control" name="booking[nik]" placeholder="Isi disini">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputemail1">Alamat</label>
+                        <input type="text" class="form-control" name="booking[address]" placeholder="Isi disini">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputemail1">No Handphone</label>
+                        <input type="text" class="form-control" name="booking[phone]" placeholder="Isi disini">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputemail1">Email</label>
+                        <input type="email" class="form-control" name="booking[email]" placeholder="Isi disini">
+                    </div>
+                  </div>
+                </div>
+          </div>
+          <div class="panel panel-info">
             @if ($vehicle == 'plane')
               @for ($i=1; $i <= $totalCount - $total['baby']; $i++)
                 <div class="panel-heading">Data penumpang {{$i}}</div>
@@ -121,12 +156,12 @@
               @endif
               <p class="col-md-4">Total
               <p class="col-md-8">IDR {{ number_format($fareTotal, 2, ',','.') }} </p>
-              @if (Entrust::hasRole(['member','admin']))
+              {{-- @if (auth()->users()->hasAnyGroup(['member','admin'])) --}}
                 <p class="col-md-12">*Harap transfer sesuai nominal di tiket untuk menghindari verifikasi error</p>
                 <button type="submit" class="btn btn-primary">Pesan</button>
-              @else
-                Login sebelum pesan tiket <a href="{{ url('login') }}"><button type="button" class="btn btn-primary">Login</button> </a>
-              @endif
+              {{-- @else --}}
+                {{-- Login sebelum pesan tiket <a href="{{ url('login') }}"><button type="button" class="btn btn-primary">Login</button> </a> --}}
+              {{-- @endif --}}
           </div>
         </div>
       </div>

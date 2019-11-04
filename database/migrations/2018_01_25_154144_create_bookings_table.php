@@ -15,10 +15,15 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->integer('schedule_id');
             $table->string('booking_code');
             $table->string('vehicle');
+            $table->string('nik');
+            $table->string('name');
+            $table->string('address');
+            $table->string('phone');
+            $table->string('email');
             $table->decimal('bill',10,2);
             $table->dateTime('expire');
             $table->timestamps();

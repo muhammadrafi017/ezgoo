@@ -77,6 +77,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+            'nik' => $data['nik'],
             'name' => $data['name'],
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
@@ -94,7 +95,7 @@ class RegisterController extends Controller
         $user = $this->create($request->all());
         $user->attachRole($role);
         UserVerification::generate($user);
-        UserVerification::send($user, 'My Custom E-mail Subject');
+        UserVerification::send($user, 'Email Verification');
         return back()->withAlert('Register successfully, please verify your email.');
     }
 }

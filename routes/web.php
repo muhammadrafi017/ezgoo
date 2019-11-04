@@ -13,7 +13,8 @@ Route::group(['prefix' => 'booking'], function(){
   Route::post('search', 'BookingController@search');
   Route::post('order', 'BookingController@order');
   Route::post('fixOrder', 'BookingController@fixOrder');
-  Route::put('payment/{id}', 'BookingController@payment');
+  Route::get('payment', 'BookingController@payment');
+  Route::post('doPayment', 'BookingController@doPayment');
 });
 //admin
 Route::group(['prefix'=>'admin', 'middleware' => 'group:admin'], function(){
@@ -54,7 +55,7 @@ Route::group(['prefix'=>'admin', 'middleware' => 'group:admin'], function(){
   });
 });
 //user
-Route::group(['prefix' => 'user', 'middleware'=> ['isVerified', 'group:user']], function(){
+Route::group(['prefix' => 'user', 'middleware'=> ['isVerified', 'group:member']], function(){
   Route::get('edit/{id}/{type}', 'UserController@edit')->name('edit');
   Route::put('update', 'UserController@update')->name('update');
   Route::put('updatePass', 'UserController@updatePassword')->name('updatePass');

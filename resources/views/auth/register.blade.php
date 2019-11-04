@@ -19,8 +19,39 @@
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
+                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                            <label for="title" class="col-md-4 control-label">Title</label>
+
+                            <div class="col-md-6">
+                                <select id="title" class="form-control" name="title" value="{{ old('title') }}" required>
+                                    <option value="Tuan">Tuan</option>
+                                    <option value="Nyonya">Nyonya</option>
+                                    <option value="Nona">Nona</option>
+                                </select>
+                                @if ($errors->has('title'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('title') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('nik') ? ' has-error' : '' }}">
+                            <label for="nik" class="col-md-4 control-label">No. KTP</label>
+
+                            <div class="col-md-6">
+                                <input id="nik" type="text" class="form-control" name="nik" value="{{ old('nik') }}" required autofocus>
+
+                                @if ($errors->has('nik'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('nik') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                            <label for="name" class="col-md-4 control-label">Nama Lengkap</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -84,22 +115,6 @@
                                 @if ($errors->has('phone'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('phone') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-                            <label for="title" class="col-md-4 control-label">Title</label>
-
-                            <div class="col-md-6">
-                                <select id="title" class="form-control" name="title" value="{{ old('title') }}" required>
-                                  <option value="Tuan">Tuan</option>
-                                  <option value="Nyonya">Nyonya</option>
-                                  <option value="Nona">Nona</option>
-                                </select>
-                                @if ($errors->has('title'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('title') }}</strong>
                                     </span>
                                 @endif
                             </div>

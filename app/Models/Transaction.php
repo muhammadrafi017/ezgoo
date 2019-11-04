@@ -10,4 +10,9 @@ class Transaction extends Model
     {
       return $this->belongsTo('App\Models\Booking');
     }
+
+    public function bank()
+    {
+      return $this->belongsTo('App\Models\BankAccount', 'bank', 'bank');
+    }
 }
