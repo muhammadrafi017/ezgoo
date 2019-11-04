@@ -1,4 +1,7 @@
 <?php
+Route::get('test', function() {
+  return auth()->user()->groups()->get();
+});
 // AJAX
 Route::get('plane/ajax/{id}','AdminController@planeAjax');
 Route::get('airport/ajax/{id}','AdminController@airportAjax');
