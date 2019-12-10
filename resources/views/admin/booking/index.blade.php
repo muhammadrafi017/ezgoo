@@ -32,6 +32,8 @@
                 <th>Tanggal booking</th>
                 <th>Kendaraan</th>
                 <th>Biaya</th>
+                <th>Status pembayaran</th>
+                <th>Bukti Pembayaran</th>
                 <!-- <th>Aksi</th> -->
             </tr>
         </thead>
@@ -48,11 +50,20 @@
 
               @endif
               <td>Rp. {{number_format($data->bill)}}</td>
-              <!-- <td>
-                  <a href="{{ url('admin/edit/'.$data->id)}}" class="fa fa-info-circle"></a>
-                  <a href="{{ url('admin/edit/'.$data->id)}}" class="fa fa-minus-circle"></a>
-                  <a href="{{ url('admin/edit/'.$data->id)}}" class="fa fa-trash 5x"></a>
-              </td> -->
+              <td>
+                @if ($data->transaction->status == 1)
+                    LUNAS
+                @else
+                    BELUM DIBAYAR
+                @endif
+              </td>
+              <td>
+                @if ($data->transaction->receipt)
+                    <a href=" {{ Storage::url('public/uploads/receipt/'.$data->transaction->receipt) }} " target="_blank"> {{ $data->transaction->receipt }} </a>
+                @else
+                    BELUM UPLOAD BUKTI
+                @endif
+              </td>
             </tr>
             @endforeach
         </tbody>

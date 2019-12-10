@@ -33,7 +33,7 @@ class BookingController extends Controller
 
     public function index()
     {
-      $booking = Booking::all();
+      $booking = Booking::with('transaction')->get();
       return view('admin.booking.index', compact('booking'));
     }
 

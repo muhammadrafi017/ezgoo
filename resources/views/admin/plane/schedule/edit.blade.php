@@ -88,9 +88,12 @@
                 <div class="form-group">
                   <label for="code">Asal :</label>
                     <select class="select2" name="airport_id">
-                      <option value="0" disabled selected>{{ $data->from }}</option>
                       @foreach($airport as $key)
-                        <b><option value="{{ $key->id }}">{{ $key->airport_name }}</option>
+                        @if ($key->from == $data->airport_name)
+                          <b><option selected value="{{ $key->id }}">{{ $key->airport_name }}</option>
+                        @else
+                          <b><option value="{{ $key->id }}">{{ $key->airport_name }}</option>
+                        @endif
                       @endforeach
                     </select>
                     <input type="hidden" class="form-control asal" id="asal">
@@ -100,9 +103,12 @@
                 <div class="form-group">
                   <label for="code">Tujuan :</label>
                     <select class="select2" name="destination">
-                      <option value="0" disabled selected>{{ $data->destination }}</option>
                       @foreach($airport as $key)
-                        <option value="{{ $key->id }}">{{ $key->airport_name }}</option>
+                        @if ($key->destination == $data->airport_name)
+                          <b><option selected value="{{ $key->id }}">{{ $key->airport_name }}</option>
+                        @else
+                          <b><option value="{{ $key->id }}">{{ $key->airport_name }}</option>
+                        @endif
                       @endforeach
                     </select>
                 </div>
@@ -117,9 +123,12 @@
                 <div class="form-group">
                   <label for="code">Nama Pesawat :</label>
                     <select class="form-control" name="plane_id">
-                      <option value="{{ $data->plane_id }}" disabled selected >{{ $data->plane->plane_name }}</option>
                       @foreach($plane as $key)
-                        <option value="{{ $key->id }}">{{ $key->plane_name }}</option>
+                        @if ($key->id == $data->plane_id)
+                          <option value="{{ $data->plane_id }}" selected >{{ $data->plane->plane_name }}</option>
+                        @else
+                          <option value="{{ $key->id }}">{{ $key->plane_name }}</option>
+                        @endif
                       @endforeach
                     </select>
                 </div>

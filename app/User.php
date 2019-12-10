@@ -14,9 +14,7 @@ class User extends Authenticatable implements Contract{
      *
      * @var array
      */
-    protected $fillable = [
-        'name','title', 'first_name', 'last_name','email', 'password','verification','phone',
-    ];
+    protected $guarded = ['id'];
 
     /**
      * The attributes that should be hidden for arrays.

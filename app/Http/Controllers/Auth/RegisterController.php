@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use App\Models\Entrust\Group as Group;
+use App\Group;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -93,7 +93,7 @@ class RegisterController extends Controller
         $group = Group::find(1);
         $this->validator($request->all())->validate();
         $user = $this->create($request->all());
-        $user->group()->attach($group);
+        User::find($user->id)->group()->attach($group);
         UserVerification::generate($user);
         UserVerification::send($user, 'Email Verification');
         return back()->withAlert('Register successfully, please verify your email.');
